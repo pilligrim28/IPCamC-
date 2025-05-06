@@ -1,0 +1,22 @@
+@using System.Threading.Tasks
+@using Microsoft.JSInterop
+@using VideoSurveillanceApp.Shared
+<h3>@Camera.Name</h3>
+<video id="player_@Camera.Id" controls></video>
+
+@code {
+    [Parameter] public Camera Camera { get; set; }
+    [Inject] IJSRuntime JSRuntime { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender && Camera != null)
+        {
+            var video = document.getElementById($"player_{Camera.Id}");
+            var hls = new Hls();
+            hls.loadSource(Camera.RtspUrl);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, () => video.play());
+        }
+    }
+}

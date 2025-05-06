@@ -1,0 +1,21 @@
+@page "/cameras"
+@using VideoSurveillanceApp.Shared
+@inject HttpClient Http
+
+<h3>Камеры</h3>
+
+<ul>
+@foreach (var cam in cameras)
+{
+    <li>@cam.Name - @cam.RtspUrl</li>
+}
+</ul>
+
+@code {
+    private List<Camera> cameras = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        cameras = await Http.GetFromJsonAsync<List<Camera>>("api/camera");
+    }
+}
