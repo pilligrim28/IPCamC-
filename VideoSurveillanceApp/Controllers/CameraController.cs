@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using VideoSurveillanceApp.Shared;
+
 using VideoSurveillanceApp.Server.Data;
+using VideoSurveillanceApp.Pages;
 
 namespace VideoSurveillanceApp.Controllers
 {
@@ -23,7 +24,7 @@ namespace VideoSurveillanceApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddCamera([FromBody] Camera camera)
+        public async Task<IActionResult> AddCamera([FromBody] Cameras camera)
         {
             if (string.IsNullOrEmpty(camera.Name) || string.IsNullOrEmpty(camera.RtspUrl))
                 return BadRequest("Название и RTSP URL обязательны");

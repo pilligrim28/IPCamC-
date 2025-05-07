@@ -1081,3 +1081,4 @@ C:\Users\alexa\OneDrive\Документы\IPCamC#\VideoSurveillanceApp\obj\Debu
 C:\Users\alexa\OneDrive\Документы\IPCamC#\VideoSurveillanceApp\obj\Debug\net9.0\refint\VideoSurveillanceApp.dll
 C:\Users\alexa\OneDrive\Документы\IPCamC#\VideoSurveillanceApp\obj\Debug\net9.0\VideoSurveillanceApp.pdb
 C:\Users\alexa\OneDrive\Документы\IPCamC#\VideoSurveillanceApp\obj\Debug\net9.0\ref\VideoSurveillanceApp.dll
+C:\Users\alexa\OneDrive\Документы\IPCamC#\VideoSurveillanceApp\obj\Debug\net9.0\VideoSurveillanceApp.sourcelink.json
